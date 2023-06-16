@@ -22,7 +22,7 @@ services:
     environment:
       WEBPACKER_DEV_SERVER_HOST: webpack-dev-server
   tailwindcss-watch:
-    image: marcari-clone:latest
+    image: mercari-clone:latest
     volumes:
       - .:/myapp
       - bundle:/usr/local/bundle
@@ -30,7 +30,7 @@ services:
     command: ["rails", "tailwindcss:watch"]
     tty: true
   webpack-dev-server:
-    image: marcari-clone:latest
+    image: mercari-clone:latest
     volumes:
       - .:/myapp
       - bundle:/usr/local/bundle

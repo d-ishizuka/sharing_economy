@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
-  devise_for :users
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  devise_for :users, controllers: {
+    confirmaitons: "users/confirmations",
+    passwords: "users/passwords",
+    sessions: "users/sessions",
+    registrations: "users/registrations",
+    unlocks: "users/unlocks"
+  }
   root to: "home#index"
-
-  # Defines the root path route ("/")
 end

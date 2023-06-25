@@ -1,4 +1,4 @@
-FROM node:18.16
+FROM node:14.17.6
 FROM ruby:3.0.2
 COPY --from=node /opt/yarn-* /opt/yarn
 COPY --from=node /usr/local/bin/node /usr/local/bin/
@@ -23,7 +23,7 @@ COPY Gemfile.lock /myapp/Gemfile.lock
 
 RUN bundle install
 
-COPY package.json ./
+COPY package.json yarn.lock ./
 RUN yarn install
 
 COPY . /myapp

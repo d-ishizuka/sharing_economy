@@ -8,18 +8,18 @@ class User < ApplicationRecord
          :lockable,
          :timeoutable,
          :trackable
-  
-  validates :nickname, presence: true, uniqueness: true
+
+  validates :nickname, presence: true
   validates :gender, presence: true
 
   enum gender: {
-    unanswered: 0,
-    male: 1,
-    female: 2
+      unanswered: 0,
+      male: 1,
+      female: 2
   }
 
   class << self
-    def gender_i18n
+    def genders_i18n
       I18n.t("enums.user.gender")
     end
   end
